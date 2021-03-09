@@ -27,8 +27,14 @@ public class GiftCMD implements CommandExecutor {
 				ItemStack inHand = player.getInventory().getItemInMainHand();
 				Player receiver = Bukkit.getPlayer(args[0]);
 				
-				receiver.getInventory().addItem(inHand);
-				player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
+				try {
+					receiver.getInventory().addItem(inHand);
+					player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
+					receiver.sendMessage(ChatColor.DARK_GREEN + player.getName() + "has given you an item!");
+				}
+				finally {
+					player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
+				}
 			}
 		}
 		return false;
