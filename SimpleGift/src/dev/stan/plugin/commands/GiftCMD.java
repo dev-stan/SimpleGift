@@ -2,10 +2,14 @@ package dev.stan.plugin.commands;
 
 import java.util.HashMap;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class GiftCMD implements CommandExecutor {
 	
@@ -18,9 +22,15 @@ public class GiftCMD implements CommandExecutor {
 			
 			Player player = (Player) sender;
 			
-			
+			if (player.hasPermission("gift.use")) {
+				
+				ItemStack inHand = player.getInventory().getItemInMainHand();
+				Player receiver = Bukkit.getPlayer(args[0]);
+				
+				receiver.getInventory().addItem(inHand);
+				player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
+			}
 		}
 		return false;
 	}
-
 }
