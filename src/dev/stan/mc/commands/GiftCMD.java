@@ -10,6 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 
 public class GiftCMD implements CommandExecutor {
 	
@@ -21,11 +23,14 @@ public class GiftCMD implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("gift")) {
 			
 			Player player = (Player) sender;
+			Player receiver = Bukkit.getPlayer(args[0]);
 			
 			if (player.hasPermission("gift.use")) {
 				
 				ItemStack inHand = player.getInventory().getItemInMainHand();
-				Player receiver = Bukkit.getPlayer(args[0]);
+				
+				player.sendMessage(ChatColor.RED + "Are you sure you want to gif an item to" + receiver.getName() + "?");
+				player.sendMessage(ChatColor.RED + "Type in /gift confirm to confirm.");
 				
 				try {
 					receiver.getInventory().addItem(inHand);
@@ -35,6 +40,12 @@ public class GiftCMD implements CommandExecutor {
 				finally {
 					player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
 				}
+				
+				TextComponent clickTrue = new TextComponent("[YES]");
+				TextComponent clickFalse = new TextComponent("[NO]");
+				
+				clickTrue.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/say clickTrue"));
+				clickFalse.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/say clickTrue"));
 			}
 		}
 		return false;
