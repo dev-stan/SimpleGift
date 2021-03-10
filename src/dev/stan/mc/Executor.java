@@ -12,9 +12,6 @@ public class Executor extends JavaPlugin implements Listener {
 	// On enable method, execute as soon as plugin is enabled.
 	@Override
 	public void onEnable() {
-		
-		// getLogger() instead of sysout on enable
-		getLogger().info("SimpleGift Plugin enabled.");
 
 		// Create new instance of Commands class and point to executor
 		getCommand("gift").setExecutor(new GiftCMD());
