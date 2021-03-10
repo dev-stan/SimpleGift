@@ -30,7 +30,7 @@ public class GiftCMD implements CommandExecutor {
 				ItemStack inHand = player.getInventory().getItemInMainHand();
 				
 				player.sendMessage(ChatColor.RED + "Are you sure you want to gif an item to" + receiver.getName() + "?");
-				player.sendMessage(ChatColor.RED + "Type in /gift confirm to confirm.");
+				player.sendMessage(ChatColor.RED + "Type in \"confirm \" to confirm or \"cancel\" to cancel.");
 				
 				try {
 					receiver.getInventory().addItem(inHand);
@@ -40,12 +40,6 @@ public class GiftCMD implements CommandExecutor {
 				finally {
 					player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
 				}
-				
-				TextComponent clickTrue = new TextComponent("[YES]");
-				TextComponent clickFalse = new TextComponent("[NO]");
-				
-				clickTrue.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/say clickTrue"));
-				clickFalse.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/say clickTrue"));
 			}
 		}
 		return false;
