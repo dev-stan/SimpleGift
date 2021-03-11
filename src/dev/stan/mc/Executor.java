@@ -7,7 +7,6 @@ import dev.stan.mc.commands.GiftCMD;
 import dev.stan.mc.events.ConfirmListenerEvent;
 import dev.stan.mc.events.HelpChatEvent;
 
-
 public class Executor extends JavaPlugin implements Listener {
 
 
