@@ -1,12 +1,11 @@
 package dev.stan.mc.commands;
 
-import java.util.HashMap;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import net.md_5.bungee.api.ChatColor;
@@ -28,8 +27,14 @@ public class GiftCMD implements CommandExecutor {
 				
 				ItemStack inHand = player.getInventory().getItemInMainHand();
 				
+				
 				player.sendMessage(ChatColor.RED + "Are you sure you want to gif an item to" + receiver.getName() + "?");
 				player.sendMessage(ChatColor.RED + "Type in \"/gift confirm \" to confirm or \"/gift cancel\" to cancel.");
+				
+				if (hasAvaliableSlot(receiver)) {
+					
+					
+				}
 				
 				if (args[0].equalsIgnoreCase("confirm")) {
 					
@@ -37,9 +42,7 @@ public class GiftCMD implements CommandExecutor {
 						receiver.getInventory().addItem(inHand);
 						player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
 						receiver.sendMessage(ChatColor.DARK_GREEN + player.getName() + "has given you an item!");
-					}
-
-					finally {
+					} finally {
 						player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
 					}
 				}
@@ -51,5 +54,18 @@ public class GiftCMD implements CommandExecutor {
 			}
 		}
 		return false;
+	}
+	
+	public boolean hasAvaliableSlot(Player player){
+		
+		Inventory inv = player.getInventory();
+		Boolean check=false;
+		for (ItemStack item: inv.getContents()) {
+			if(item == null) {
+				check = true;
+				break;
+			}
+		}
+		return check;
 	}
 }
