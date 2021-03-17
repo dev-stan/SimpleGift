@@ -13,6 +13,11 @@ public class Executor extends JavaPlugin implements Listener {
 	// On enable method, execute as soon as plugin is enabled.
 	@Override
 	public void onEnable() {
+		
+		
+		// Create and save plugin config
+		this.getConfig().options().copyDefaults();
+		saveDefaultConfig();
 
 		// Create new instance of Commands class and point to executor
 		getCommand("gift").setExecutor(new GiftCMD());
