@@ -25,7 +25,5 @@ public class Executor extends JavaPlugin implements Listener {
 		// Create new instance of Events class and point to executor
 		getServer().getPluginManager().registerEvents(new HelpChatEvent(), this);
 		getServer().getPluginManager().registerEvents(new ConfirmListenerEvent(), this);
-
 	}
-
 }

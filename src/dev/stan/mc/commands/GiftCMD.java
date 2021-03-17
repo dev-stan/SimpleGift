@@ -15,7 +15,6 @@ import net.md_5.bungee.api.chat.TextComponent;
 
 public class GiftCMD implements CommandExecutor {
 	
-	public HashMap<String, Long> cooldowns = new HashMap<String, Long>();
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -30,7 +29,17 @@ public class GiftCMD implements CommandExecutor {
 				ItemStack inHand = player.getInventory().getItemInMainHand();
 				
 				player.sendMessage(ChatColor.RED + "Are you sure you want to gif an item to" + receiver.getName() + "?");
-				player.sendMessage(ChatColor.RED + "Type in \"confirm \" to confirm or \"cancel\" to cancel.");
+				player.sendMessage(ChatColor.RED + "Type in \"/gift confirm \" to confirm or \"/gift cancel\" to cancel.");
+				
+				if (args[0].equalsIgnoreCase("confirm")) {
+					
+					// do stuff
+				}
+				
+				if (args[0].equalsIgnoreCase("cancel")) {
+					
+					// do stuff
+				}
 				
 				try {
 					receiver.getInventory().addItem(inHand);

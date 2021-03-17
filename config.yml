@@ -1,0 +1,5 @@
+# Config for the Gift Minecraft plugin.
+version: 1.0.0
+
+# Whether players have to confirm with /gift confirm. Set "false" to disable.
+confirm: true
