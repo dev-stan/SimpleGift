@@ -33,21 +33,20 @@ public class GiftCMD implements CommandExecutor {
 				
 				if (args[0].equalsIgnoreCase("confirm")) {
 					
-					// do stuff
+					try {
+						receiver.getInventory().addItem(inHand);
+						player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
+						receiver.sendMessage(ChatColor.DARK_GREEN + player.getName() + "has given you an item!");
+					}
+
+					finally {
+						player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
+					}
 				}
 				
 				if (args[0].equalsIgnoreCase("cancel")) {
 					
-					// do stuff
-				}
-				
-				try {
-					receiver.getInventory().addItem(inHand);
-					player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
-					receiver.sendMessage(ChatColor.DARK_GREEN + player.getName() + "has given you an item!");
-				}
-				finally {
-					player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
+					player.sendMessage(ChatColor.DARK_RED + "You've cancelled your gift to " + ChatColor.DARK_GREEN + receiver.getName() + ChatColor.DARK_RED + "!");
 				}
 			}
 		}
