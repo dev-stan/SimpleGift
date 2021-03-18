@@ -1,6 +1,6 @@
 # Simple Gift
 ### About
-The name says it all! It's a simple `/gift` plugin designed with simplicity in mind. This lightweight and highly customizable plugin comes with the most basic features so your players don't get confused and can start making gifts almost intantly. You can find more informatoin in the [tutorial file](https://github.com/dev-stan/SimpleGift/blob/dev-util/TUTORIAL.md).
+The name says it all! It's a simple `/gift` plugin designed with simplicity in mind. SimpleGift comes with the most basic features, so players don't get confused and can start making gifts almost instantly. You can find more information in the [tutorial file](https://github.com/dev-stan/SimpleGift/blob/dev-util/TUTORIAL.md).
 
 ### Commands
 - `gift` - Gift an item to a player.
