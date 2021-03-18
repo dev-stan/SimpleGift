@@ -12,3 +12,4 @@ All messages and permission nodes can be configured in the `config.yml` file.
 ### Ideas
 - [x] Configurable permission nodes and messages.
 - [ ] `gift reload` command which will be used to reload the plugin `config.yml`.
+------
