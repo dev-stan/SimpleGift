@@ -23,7 +23,7 @@ public class GiftCMD implements CommandExecutor {
 			Player player = (Player) sender;
 			Player receiver = Bukkit.getPlayer(args[0]);
 			
-			if (player.hasPermission("gift.use")) {
+			if (player.hasPermission(config.getString("permissions.use"))) {
 				
 				ItemStack inHand = player.getInventory().getItemInMainHand();
 				
@@ -31,19 +31,16 @@ public class GiftCMD implements CommandExecutor {
 				player.sendMessage(ChatColor.RED + "Are you sure you want to gif an item to" + receiver.getName() + "?");
 				player.sendMessage(ChatColor.RED + "Type in \"/gift confirm \" to confirm or \"/gift cancel\" to cancel.");
 				
-				if (hasAvaliableSlot(receiver)) {
-					
-					
-				}
 				
 				if (args[0].equalsIgnoreCase("confirm")) {
 					
-					try {
+					if (hasAvaliableSlot(receiver)) {
+						
 						receiver.getInventory().addItem(inHand);
-						player.sendMessage(ChatColor.GREEN + "Succesfully gifted an item to " + receiver.getName() + ChatColor.GREEN + "!");
-						receiver.sendMessage(ChatColor.DARK_GREEN + player.getName() + "has given you an item!");
-					} finally {
-						player.sendMessage(ChatColor.DARK_RED + "Something went very wrong, please report this to the server administrator!");
+					} else {
+						
+						player.sendMessage(receiver.getName() + ChatColor.DARK_RED + " has a full inventory, the operation has been stopped.");
+						receiver.sendMessage(player.getName() + ChatColor.DARK_RED + " has just sent you a gift but your inventory was full, the operation has been stopped.");
 					}
 				}
 				

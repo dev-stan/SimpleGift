@@ -9,7 +9,7 @@ import dev.stan.mc.events.HelpChatEvent;
 
 public class Executor extends JavaPlugin implements Listener {
 
-	FileConfiguration config = this.getConfig();
+	public FileConfiguration config = this.getConfig();
 	
 	
 	// On enable method, execute as soon as plugin is enabled.
@@ -17,11 +17,14 @@ public class Executor extends JavaPlugin implements Listener {
 	public void onEnable() {
 		
 		// Writing to the config
-		config.addDefault("messages.general.prefix", "&6[&eGIFT&6] ");
-		config.addDefault("messages.general.success", "&aGift sent succesfully!");
+		config.addDefault("permissions.use", "gift.use");
+		config.addDefault("permissions.admin", "gift.admin");
 		
-		config.addDefault("messages.error.no-permission", "&4You do not have permission to perform this command!");
-		config.addDefault("messages.error.inventory-full", "&4Player inventory is full!");
+		config.addDefault("messages.general.prefix", "&6[&eGIFT&6] ");
+		config.addDefault("messages.general.success-message", "&aGift sent succesfully!");
+		
+		config.addDefault("messages.error.no-permission-message", "&4You do not have permission to perform this command!");
+		config.addDefault("messages.error.inventory-full-message", "&4Player inventory is full!");
 		
 		
 		this.getConfig().options().copyDefaults(); // Copy config defaults
