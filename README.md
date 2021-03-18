@@ -1,6 +1,6 @@
 # Simple Gift
 ### About
-With configurable permission nodes, messages and a small amount of code, this plugin brings a new gifting system which will change any server for the better.
+The name says it all! It's a simple `/gift` plugin designed with simplicity in mind. This lightweight and highly customizable plugin comes with the most basic features so your players don't get confused and can start making gifts almost intantly. You can find more informatoin in the [tutorial file](https://github.com/dev-stan/SimpleGift/blob/dev-util/TUTORIAL.md).
 
 ### Commands
 - `gift` - Gift an item to a player.
