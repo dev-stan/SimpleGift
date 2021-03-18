@@ -1,4 +1,5 @@
 # Simple Gift
+### About
 With configurable permission nodes, messages and a small amount of code, this plugin brings a new gifting system which will change any server for the better.
 
 ### Commands
@@ -8,6 +9,6 @@ With configurable permission nodes, messages and a small amount of code, this pl
 ### Features
 All messages and permission nodes can be configured in the `config.yml` file.
 
-### Ideas to implement
-- `gift reload` command which will be used to reload the plugin `config.yml`
-- Separate `messages.txt` file for message configuration
+### Ideas
+- [ ] `gift reload` command which will be used to reload the plugin `config.yml`
+- [ ] Separate `messages.txt` file for message configuration
