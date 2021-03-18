@@ -9,8 +9,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.TextComponent;
 
 public class GiftCMD implements CommandExecutor {
 	
@@ -23,7 +21,7 @@ public class GiftCMD implements CommandExecutor {
 			Player player = (Player) sender;
 			Player receiver = Bukkit.getPlayer(args[0]);
 			
-			if (player.hasPermission(config.getString("permissions.use"))) {
+			if (player.hasPermission("gift.use")) { // Reminder to implement custom config permission nodes
 				
 				ItemStack inHand = player.getInventory().getItemInMainHand();
 				
