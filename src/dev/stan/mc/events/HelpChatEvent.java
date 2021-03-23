@@ -20,6 +20,11 @@ public class HelpChatEvent extends JavaPlugin implements Listener{
 			player.sendMessage(ChatColor.GOLD + "Use the /gift command in order to give an item to a player.");
 		}
 		
+		if (event.getMessage().contains("/gift")) {
+			
+			player.sendMessage(ChatColor.GOLD + "Use the /gift command in order to give an item to a player.");
+		}
+		
 		
 	}
 }
