@@ -1,25 +1,16 @@
-
 # Customize every permission node. Don't forget to change group / player pemrissions after editing this file.
 Permissions:
-  # Grants access to the /give command.
-  send-gift: "gift.send"
-  # Receieve rewards.
-  receive-gift: "gift.receive"
-  # Gives access to every SimpleGift command, only give this permission node to trusted players!
-  admin: "gift.admin"
+  send-gift: "gift.send" # Grants access to the /give command.
+  receive-gift: "gift.receive" # Receieve rewards.
+  admin: "gift.admin" # Gives access to every SimpleGift command, only give this permission node to trusted players!
 
 # Customize every message. Set value to "-1" if you don't want the message to be displayed.
 Messages:
   # General and most common messages
   general:
-    # Plugin prefix, you can see it before every plugin message.
-    prefix: "&6[&eGIFT&6] "
-    # Message sent to the sender if the gift was sent succesfully.
-    success-message: "&aGift sent succesfully!"
+    prefix: "&6[&eGIFT&6] " # Plugin prefix, you can see it before every plugin message.
+    success-message: "&aGift sent succesfully!" # Message sent to the sender if the gift was sent succesfully.
   # Error messages
   error:
-    # Message sent when the player does now have the right permission node for the command he's trying to execute.
-    no-permisison-message: "4You do not have permission to perform this command!"
-    # Message sent to the sender if the receiver's inventory is full.
-    inventory-full-message: "&4Player inventory is full!"
-      
+    no-permisison-message: "4You do not have permission to perform this command!" # Message sent when the player does now have the right permission node for the command he's trying to execute.
+    inventory-full-message: "&4Player inventory is full!" # Message sent to the sender if the receiver's inventory is full.
