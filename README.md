@@ -16,3 +16,4 @@ Use the `/gift` command to give the item in your main hand to another player, ty
 - [ ] Implement config options in the actual code.
 - [ ] `gift reload` command which will be used to reload the plugin `config.yml`.
 
+This project will be further developed.
